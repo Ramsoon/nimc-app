@@ -1,0 +1,199 @@
+/* Page layout */
+.success-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom right,
+    hsl(155, 85%, 98%),
+    hsl(180, 85%, 97%),
+    hsl(210, 85%, 98%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .success-page {
+    padding: 1.5rem;
+  }
+}
+
+/* Background orbs */
+.background-orbs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(48px);
+  animation: pulse 8s infinite;
+}
+
+.orb-top {
+  top: -10%;
+  left: -5%;
+  width: 24rem;
+  height: 24rem;
+  background: linear-gradient(to bottom right, rgba(0, 200, 83, 0.2), rgba(0, 150, 200, 0.2));
+}
+
+.orb-bottom {
+  bottom: -10%;
+  right: -5%;
+  width: 32rem;
+  height: 32rem;
+  background: linear-gradient(to top left, rgba(0, 150, 200, 0.15), rgba(0, 200, 83, 0.15));
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+/* Card */
+.success-card-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.success-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 60px rgba(15, 157, 88, 0.04);
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .success-card {
+    padding: 3rem;
+  }
+}
+
+/* Success Icon */
+.success-icon-wrapper {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.success-icon-bg {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 200, 83, 0.2);
+  border-radius: 50%;
+  filter: blur(24px);
+  animation: pulse 2s infinite;
+}
+
+.success-icon {
+  width: 5rem;
+  height: 5rem;
+  background: linear-gradient(to bottom right, hsl(155, 85%, 45%), hsl(155, 75%, 38%));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(15, 157, 88, 0.3);
+  animation: zoomIn 0.5s ease;
+}
+
+.success-icon .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+}
+
+/* Title */
+.success-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+  color: #111827;
+}
+
+@media (min-width: 640px) {
+  .success-title {
+    font-size: 2rem;
+  }
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.divider-bar {
+  height: 0.25rem;
+  width: 4rem;
+  background: linear-gradient(to right, hsl(155, 85%, 45%), hsl(180, 85%, 50%));
+  border-radius: 9999px;
+}
+
+/* Text */
+.success-text {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Button */
+.success-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.5rem;
+  height: 3rem;
+  background: linear-gradient(to bottom right, hsl(155, 85%, 45%), hsl(155, 75%, 38%));
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px rgba(15, 157, 88, 0.25);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.success-btn:hover {
+  box-shadow: 0 6px 20px rgba(15, 157, 88, 0.35);
+  transform: translateY(-2px);
+}
+
+.success-btn:active {
+  transform: scale(0.98);
+}
+
+.success-btn .btn-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(1rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

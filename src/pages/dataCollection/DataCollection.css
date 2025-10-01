@@ -1,0 +1,331 @@
+/* Page */
+.data-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom right,
+    hsl(155, 85%, 98%),
+    hsl(180, 85%, 97%),
+    hsl(210, 85%, 98%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .data-page {
+    padding: 1.5rem;
+  }
+}
+
+/* Background Orbs */
+.background-orbs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(48px);
+  animation: pulse 8s infinite;
+}
+
+.orb-top {
+  top: -10%;
+  left: -5%;
+  width: 24rem;
+  height: 24rem;
+  background: linear-gradient(to bottom right, rgba(0, 200, 83, 0.2), rgba(0, 150, 200, 0.2));
+}
+
+.orb-bottom {
+  bottom: -10%;
+  right: -5%;
+  width: 32rem;
+  height: 32rem;
+  background: linear-gradient(to top left, rgba(0, 150, 200, 0.15), rgba(0, 200, 83, 0.15));
+  animation-duration: 10s;
+  animation-delay: 2s;
+}
+
+.orb-center {
+  top: 50%;
+  left: 50%;
+  width: 16rem;
+  height: 16rem;
+  background: rgba(0, 200, 83, 0.1);
+  filter: blur(32px);
+  animation-duration: 12s;
+  animation-delay: 4s;
+  transform: translate(-50%, -50%);
+}
+
+/* Pattern Overlay */
+.pattern-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Wrapper */
+.form-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.form-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(24px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 0 60px rgba(15, 157, 88, 0.04);
+  padding: 2rem;
+}
+
+@media (min-width: 640px) {
+  .form-card {
+    padding: 3rem;
+  }
+}
+
+/* Corner accent */
+.corner-accent {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  opacity: 0.1;
+  background: linear-gradient(to bottom right, hsl(155, 85%, 45%), hsl(180, 85%, 50%));
+  border-radius: 0.5rem;
+  transform: rotate(45deg);
+}
+
+/* Badge */
+.security-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 auto 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background: rgba(0, 200, 83, 0.05);
+  border: 1px solid rgba(0, 200, 83, 0.1);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: hsl(155, 85%, 35%);
+}
+
+.badge-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Title */
+.form-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-title h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+  color: #111827;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.divider-bar {
+  height: 0.25rem;
+  width: 4rem;
+  background: linear-gradient(to right, hsl(155, 85%, 45%), hsl(180, 85%, 50%));
+  border-radius: 9999px;
+}
+
+.form-title p {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Form fields */
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  height: 3.5rem;
+  padding: 1.25rem 1rem 0.5rem;
+  font-size: 15px;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: hsl(155, 85%, 45%);
+  box-shadow: 0 0 0 4px rgba(15, 157, 88, 0.12);
+  transform: scale(1.01);
+}
+
+.input-group input::placeholder {
+  color: transparent;
+}
+
+.input-group label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #6b7280;
+  background: white;
+  padding: 0 0.25rem;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: 0.75rem;
+  font-size: 12px;
+  color: hsl(155, 85%, 45%);
+}
+
+/* Submit Button */
+.submit-btn {
+  position: relative;
+  width: 100%;
+  height: 54px;
+  background: linear-gradient(to bottom right, hsl(155, 85%, 45%), hsl(155, 75%, 38%));
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 157, 88, 0.25);
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(15, 157, 88, 0.35);
+  transform: translateY(-2px);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Shimmer overlay */
+.shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.btn-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Spinner */
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Footer */
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.footer-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+/* Progress bar */
+.progress-indicator {
+  position: absolute;
+  bottom: -0.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4rem;
+  height: 0.25rem;
+  background: rgba(0, 200, 83, 0.2);
+  border-radius: 9999px;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(1rem); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
